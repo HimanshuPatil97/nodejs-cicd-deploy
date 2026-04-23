@@ -15,30 +15,4 @@ phases:
   post_build:
     commands:
       - echo "Deploying to EC2"
-      - ssh -o StrictHostKeyChecking=no ubuntu@-----BEGIN RSA PRIVATE KEY-----
-MIIEpQIBAAKCAQEA5VbMhnrtYqTUnXG8ekeO6L6pcYGAORA1S41qax2tiTIkKN50
-A4vncRZNq/eNmEKotF3BAJOEMYDOJtH8IXNWA1KcCRkeAROAm+m/RQXm+i2pIFIM
-wnz0gWv+iczYFmewx+My5cj7LpHilwUvpjWp8wCxM2LZwrfpgUbhdYH4Td+4xpKt
-45efs4XuodvqiioHoBwIxKjMHkLZvt+lt5OTqv0o/sppcXaYZNA7/yn/HmJJCWoh
-cTi7rgT62SsMhwfi3POqrLiAvLDAPkpytq0lcOLj9oWtxAkVVAmvRIUjVPsEFx+y
-wEunPWsJMpIQf+UNStxlJTm6FD1+FTfv84CxRwIDAQABAoIBAFDQk2XYL4qRNvL8
-P0R/rtZJSYBb+AkjswQaoyN348zyxFc6fHs7c6UgDOLKazT6WGSmnPpNAUpIb1yy
-pjxLXkXxeFakaTRL4QgQCHyUJd6G9JAVGbX3PlnU6m84pfTPOTZW03qxpgG1GrnI
-9A+H3Ylp9wd6j+3TzQ7nIU+9KviVcKGdKpP3P500SXmvrYNAggjOrTLUIPAIkPg8
-mky6EQeL6Icy5umRIq+heW6OMLdxwwUailLPzG2KJCPAWpCFqKnuG9I+7D71M+CR
-hla/DyVp2DG0l81L2xb3bP2XC7YKWWvU/6lQXGNMCiZ0gD5RujwOoMbffpxYiU60
-/5MeiOECgYEA/UjbfKiybwnGyEbrpTYgndC9f6JTAhbL6qZrgN+hiAqhI7J9iZZS
-EF7/sNo+b6+3M6ATrYWtXkY5Fk/w6sDkIQLQS59rgXr7qTtqep/Mq/NigLeBUfuJ
-1qie7pHpWeIREP92DdStO9ABWerofoTTiVxi5NRk1oY08fxElVanj58CgYEA58w5
-BOvcNz4cdPilH1zLNiOFC5yRNUPRSfC6tLa6+ikYYN8B2Vrdc1+rPcq2q4xZVjSf
-J8trF+i10I/UDnnkx9IJlwzTsrnrr5yWgku3GyaJ7NypONgWJ0sD1r7vT14NDRLv
-jXui98TY/Es/KtuWQ8XwFKmZKv06CP2tg7cNXVkCgYEAi+OFdeAmTLV1mH+y/lha
-w07amneoqOq2TS8FCPR6XoygWvrl4uum/2u4hJDFEyJVaKnstFW0XvEh7nTQdpd6
-Z9EKAfpWgfjOrbUnJfrEK+QMb1LqlcD7bBdNUC4+V2pISr8NEK55zyMe2+6l4dqy
-ipb/96pm1yTgcRYHOwPVH7kCgYEAl/Anl/A6gwN1h77MDYi3sx8JQJk6HV38u6jN
-2VLFsOBrGGRVQ/HpooydJH3RyxTOIlGP2XffFOb29mSwrWR87/XfT2GbClYQBSZx
-CasztNpIIjhpu9b4fn0PYR36o12U1HMLDwRxyFMBoC56k08oafg+7GxW9/TQq8AM
-kn/UhNECgYEA+hCgIDyfuJdxaC0ksWveoETthmbYpvfQWzyO9ED8DNcV8jc9mxPh
-6NQQfprkS8xEgbVOvDISE6SARrwbIdql+C4/NiM9pdsovTPU5jYm9EmubbkAHRpc
-VbujUA0ICHWqIM9bflhWdoFBZyiu9L3UFxt+0pGtzun2GPtC6hcJI+U=
------END RSA PRIVATE KEY----- "cd /home/ubuntu/nodejs-cicd-deploy && git pull && npm install && pm2 restart all || pm2 start app.js"
+      - ssh -o StrictHostKeyChecking=no ubuntu@13.233.111.160 "cd /home/ubuntu/nodejs-cicd-deploy && git pull && npm install && pm2 restart all || pm2 start app.js"
