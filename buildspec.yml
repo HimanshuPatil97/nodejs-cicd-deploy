@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies
+
+  build:
+    commands:
+      - echo Build started
+
+  post_build:
+    commands:
+      - echo Deploying to EC2
+      - ssh -o StrictHostKeyChecking=no ubuntu@13.201.38.243"cd /home/ubuntu && git pull && npm install && pm2 restart all || pm2 start app.js"
